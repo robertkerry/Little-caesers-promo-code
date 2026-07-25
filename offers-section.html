@@ -1,0 +1,1359 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Caesars Promo Codes &amp; Deals</title>
+<style>
+  :root {
+    /* Color system — Palette A (terracotta / charcoal / cream / mustard-gold) */
+    --color-primary: #262A33;        /* Charcoal (titles, primary buttons) */
+    --color-primary-hover: #1B1F26;
+    --color-secondary: #C65A2E;      /* Terracotta (brand name, links) */
+    --color-accent: #C65A2E;         /* Terracotta accent (discount values, CTA) */
+    --color-accent-hover: #9C4322;
+    --color-success: #3F7A4E;
+    --color-warning: #8A6412;
+    --color-bg: #FAF3EA;             /* Warm cream */
+    --color-card: #FFFFFF;
+    --color-border: #F0E6D8;
+    --color-border-hover: #E4D5BF;
+    --color-text: #262A33;
+    --color-muted: #8A8378;
+    --color-coupon-strip: #FBF1DE;   /* Warm cream-gold strip */
+    --color-coupon-strip-hover: #F5E6C4;
+    --color-modal-bg: #FFFFFF;
+    --color-backdrop: rgba(38, 42, 51, 0.58);
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-9: 40px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 16px;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-card: 0 1px 2px rgba(20, 12, 8, 0.06), 0 2px 8px rgba(20, 12, 8, 0.05);
+    --shadow-modal: 0 12px 40px rgba(15, 8, 5, 0.25);
+
+    /* Motion */
+    --transition-fast: 150ms ease;
+    --transition-base: 180ms ease;
+
+    /* Layout */
+    --container-width: 920px;
+    --panel-width: 128px;
+
+    /* Typography */
+    --font-family: system-ui, "Segoe UI", Arial, sans-serif;
+    --fs-body: 14.5px;
+    --fs-title: 18px;
+    --fs-h2: 32px;
+    --fs-discount-value: 46px;
+    --fs-discount-value-compact: 22px;
+    --fs-discount-label: 12.5px;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* --------------------------------------------------------------
+     THEME-PROOFING
+     WordPress/theme stylesheets often style bare h1-h6, p, ul, li
+     with their own margins. Those selectors can match or exceed
+     our class-based specificity, so on the live site they can
+     override this component's spacing even though everything
+     looks correct in the editor preview. These rules force this
+     widget's own rhythm regardless of the surrounding theme.
+  ----------------------------------------------------------------- */
+  .offers-section ul,
+  .offers-section li {
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .offers-section button,
+  .offers-section a {
+    margin: 0 !important;
+    font-family: inherit;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-family);
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .offers-section {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--space-9) var(--space-5) var(--space-9);
+  }
+
+  .offers-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .offers-header h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.25;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-3) !important;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .offers-header p {
+    font-size: 16px;
+    color: var(--color-muted);
+    margin: 0 !important;
+    max-width: 560px;
+    margin-inline: auto !important;
+  }
+
+  /* Filter chips */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-7);
+    list-style: none;
+    padding: 0;
+  }
+
+  .filter-chip {
+    border: 1px solid var(--color-border);
+    background: var(--color-card);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .filter-chip:hover {
+    background: #F5EAD8;
+    border-color: var(--color-border-hover);
+  }
+
+  .filter-chip:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  .filter-chip[aria-pressed="true"] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #FFFFFF;
+  }
+
+  /* Card list */
+  .coupon-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .coupon-list-item[hidden] {
+    display: none;
+  }
+
+  /* Compact horizontal card */
+  .coupon-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: stretch;
+    transition: border-color var(--transition-base);
+  }
+
+  .coupon-card:hover,
+  .coupon-card:focus-within {
+    border-color: var(--color-border-hover);
+  }
+
+  .coupon-card:hover .coupon-strip,
+  .coupon-card:focus-within .coupon-strip {
+    background: var(--color-coupon-strip-hover);
+  }
+
+  .coupon-card:hover .cta-button,
+  .coupon-card:focus-within .cta-button {
+    background: var(--color-accent-hover);
+  }
+
+  /* Left savings panel */
+  .savings-panel {
+    flex: 0 0 var(--panel-width);
+    width: var(--panel-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-3);
+    padding: var(--space-6) var(--space-3);
+    border-right: 1px solid var(--color-border);
+  }
+
+  .savings-panel .badge {
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  /* Discount: the strongest visual element on the card */
+  .discount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    gap: 3px;
+  }
+
+  .discount-value {
+    font-size: var(--fs-discount-value);
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .discount-value.is-compact {
+    font-size: var(--fs-discount-value-compact);
+    letter-spacing: -0.005em;
+  }
+
+  .discount-suffix,
+  .discount-prefix {
+    font-size: var(--fs-discount-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    opacity: 0.85;
+  }
+
+  .discount-prefix {
+    color: var(--color-muted);
+    opacity: 1;
+  }
+
+  /* Right content area */
+  .card-content {
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-5) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .content-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: 2px !important;
+  }
+
+  .brand-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary);
+    margin: 0 !important;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px var(--space-3);
+    border-radius: var(--radius-pill);
+    background: #F1EEE7;
+    color: var(--color-muted);
+    border: 1px solid #E4D9C8;
+  }
+
+  .badge.badge-official {
+    background: #E3EFE6;
+    color: var(--color-success);
+    border-color: #CFE0D4;
+  }
+
+  .badge.badge-community {
+    background: #FBF0DC;
+    color: var(--color-warning);
+    border-color: #EDD9A8;
+  }
+
+  .card-title {
+    font-size: var(--fs-title);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 !important;
+    line-height: 1.3;
+  }
+
+  .card-desc {
+    font-size: var(--fs-body);
+    color: var(--color-muted);
+    margin: 0 !important;
+    line-height: 1.5;
+  }
+
+  .eligibility {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 13px;
+    color: var(--color-muted);
+    margin: 0 0 var(--space-2) !important;
+    line-height: 1.45;
+  }
+
+  .eligibility svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-secondary);
+  }
+
+  /* Coupon / action strip */
+  .coupon-strip {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    background: var(--color-coupon-strip);
+    border: 1px dashed #D9A441;
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-5);
+    position: relative;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color var(--transition-base);
+  }
+
+  .coupon-strip::before,
+  .coupon-strip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .coupon-strip::before { left: -8px; }
+  .coupon-strip::after { right: -8px; }
+
+  .coupon-code,
+  .action-label {
+    font-family: "Courier New", monospace;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.03em;
+  }
+
+  .action-label {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: normal;
+    font-size: 14.5px;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-accent);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 13.5px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-pill);
+    border: none;
+    transition: background-color var(--transition-fast);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .coupon-strip:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+  }
+
+  /* Modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: var(--color-backdrop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base);
+    z-index: 1000;
+  }
+
+  .modal-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal {
+    background: var(--color-modal-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-modal);
+    max-width: 480px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--space-8);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .modal-backdrop.is-open .modal {
+    opacity: 1;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  .modal-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-muted);
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-shrink: 0;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .modal-close:hover {
+    background: #F1EEE7;
+    color: var(--color-text);
+  }
+
+  .modal-close:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  .modal-discount {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-2);
+  }
+
+  .modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-4);
+    line-height: 1.3;
+  }
+
+  .modal-desc {
+    font-size: 15px;
+    color: var(--color-muted);
+    margin: 0 0 var(--space-5);
+    line-height: 1.55;
+  }
+
+  .code-box {
+    background: var(--color-coupon-strip);
+    border: 1px dashed #D9A441;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    padding: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+
+  .code-box .code-text {
+    font-family: "Courier New", monospace;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+  }
+
+  .copy-button {
+    width: 100%;
+    background: var(--color-accent);
+    color: #FFFFFF;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: inherit;
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    margin-bottom: var(--space-6);
+    transition: background-color var(--transition-fast);
+  }
+
+  .copy-button:hover { background: var(--color-accent-hover); }
+
+  .copy-button:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  .copy-button.is-copied {
+    background: var(--color-success);
+  }
+
+  .modal-section-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-secondary);
+    margin: 0 0 var(--space-2);
+  }
+
+  .modal-section {
+    margin-bottom: var(--space-6);
+  }
+
+  .modal-section p,
+  .modal-section ol {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .modal-section ol {
+    padding-left: var(--space-5);
+  }
+
+  .modal-section ol li + li {
+    margin-top: var(--space-1);
+  }
+
+  .visit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+  }
+
+  .visit-button:hover { background: var(--color-primary-hover); }
+
+  .visit-button:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 900px) {
+    :root {
+      --fs-discount-value: 39px;
+      --fs-discount-value-compact: 20px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .coupon-card {
+      flex-direction: column;
+    }
+    .savings-panel {
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-start;
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-3) var(--space-5);
+      gap: var(--space-4);
+    }
+    .discount {
+      flex-direction: row;
+      align-items: baseline;
+      gap: var(--space-2);
+    }
+    .card-content {
+      padding: var(--space-4) var(--space-5);
+    }
+  }
+
+  @media (max-width: 560px) {
+    :root {
+      --fs-h2: 26px;
+      --fs-title: 17px;
+      --fs-discount-value: 34px;
+      --fs-discount-value-compact: 18px;
+    }
+    .offers-section { padding: var(--space-8) var(--space-4); }
+    .coupon-strip {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    .cta-button { align-self: stretch; justify-content: center; }
+    .modal { padding: var(--space-6); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+
+
+<section class="offers-section" aria-labelledby="offers-heading">
+  <div class="offers-header">
+    <h2 id="offers-heading">Today's Active Little Caesars Promo Codes &amp; Deals (July 2026)</h2>
+    <p>Find today's best Little Caesars promo codes, verified coupons, official offers, and app-exclusive deals in one place. Every offer includes the discount amount, redemption details, and any minimum order requirements.</p>
+  </div>
+
+  <ul class="filter-bar" role="group" aria-label="Filter offers by type">
+    <li><button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All Offers</button></li>
+    <li><button type="button" class="filter-chip" data-filter="promo" aria-pressed="false">Promo Codes</button></li>
+    <li><button type="button" class="filter-chip" data-filter="official" aria-pressed="false">Official Codes</button></li>
+    <li><button type="button" class="filter-chip" data-filter="delivery" aria-pressed="false">Delivery</button></li>
+    <li><button type="button" class="filter-chip" data-filter="bread" aria-pressed="false">Combo &amp; Bread</button></li>
+    <li><button type="button" class="filter-chip" data-filter="ongoing" aria-pressed="false">Ongoing Programs</button></li>
+  </ul>
+
+  <ul class="coupon-list" id="couponList">
+
+    <!-- CARD 1 -->
+    <li class="coupon-list-item" data-filters="promo official">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Code</span>
+          <span class="discount"><span class="discount-value">$3</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Most Reliable</span>
+          </div>
+          <h3 class="card-title">$3 Off Your Order</h3>
+          <p class="card-desc">Save $3 on any order through the official site or app.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+            <span>Minimum $18 order before tax and fees. Limit one per person per day. Cannot combine with other offers.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for $3 Off Your Order" data-offer-type="promo" data-discount="$3 Off" data-title="$3 Off Your Order" data-badges="Official Offer,Most Reliable" data-description="Save $3 on any order through the official site or app." data-eligibility="Minimum $18 order before tax and fees. Limit one per person per day. Cannot combine with other offers." data-code="3OFF18">
+            <span class="coupon-code">3OF••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 2 -->
+    <li class="coupon-list-item" data-filters="promo official delivery">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Code</span>
+          <span class="discount"><span class="discount-value">20%</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Delivery Only</span>
+          </div>
+          <h3 class="card-title">20% Off Delivery Orders</h3>
+          <p class="card-desc">Get 20% off when you order delivery through the official site or app.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+            <span>Minimum $20 delivery order. Delivery orders only.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for 20% Off Delivery Orders" data-offer-type="promo" data-discount="20% Off" data-title="20% Off Delivery Orders" data-badges="Official Offer,Delivery Only" data-description="Get 20% off when you order delivery through the official site or app." data-eligibility="Minimum $20 delivery order. Delivery orders only." data-code="WEDELIVER">
+            <span class="coupon-code">WED••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 3 -->
+    <li class="coupon-list-item" data-filters="promo">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value">$5</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Community Verified</span>
+          </div>
+          <h3 class="card-title">$5 Off Orders Over $15</h3>
+          <p class="card-desc">Save $5 on qualifying orders of $15 or more.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Frequently listed on Groupon and RetailMeNot. Test at checkout — availability may vary.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for $5 Off Orders Over $15" data-offer-type="promo" data-discount="$5 Off" data-title="$5 Off Orders Over $15" data-badges="Coupon Code,Community Verified" data-description="Save $5 on qualifying orders of $15 or more." data-eligibility="Frequently listed on Groupon and RetailMeNot. Test at checkout — availability may vary." data-code="5OFF15">
+            <span class="coupon-code">5OF••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 4 -->
+    <li class="coupon-list-item" data-filters="promo">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value">$5</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Community Verified</span>
+          </div>
+          <h3 class="card-title">$5 Off Orders Over $25</h3>
+          <p class="card-desc">Save $5 on qualifying orders of $25 or more.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Common higher-threshold code from coupon sites. Test at checkout.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for $5 Off Orders Over $25" data-offer-type="promo" data-discount="$5 Off" data-title="$5 Off Orders Over $25" data-badges="Coupon Code,Community Verified" data-description="Save $5 on qualifying orders of $25 or more." data-eligibility="Common higher-threshold code from coupon sites. Test at checkout." data-code="5OFF25">
+            <span class="coupon-code">5OF••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 5 -->
+    <li class="coupon-list-item" data-filters="promo">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value">10%</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Community Verified</span>
+          </div>
+          <h3 class="card-title">10% Off Orders Over $10</h3>
+          <p class="card-desc">Take 10% off any order above $10.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Sourced from Groupon. Simple percentage discount — test at checkout.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for 10% Off Orders Over $10" data-offer-type="promo" data-discount="10% Off" data-title="10% Off Orders Over $10" data-badges="Coupon Code,Community Verified" data-description="Take 10% off any order above $10." data-eligibility="Sourced from Groupon. Simple percentage discount — test at checkout." data-code="hangten">
+            <span class="coupon-code">han••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 6 -->
+    <li class="coupon-list-item" data-filters="promo bread">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value">50%</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Bread &amp; Sides</span>
+          </div>
+          <h3 class="card-title">50% Off Any Bread Item</h3>
+          <p class="card-desc">Half off any bread item, including Crazy Bread and Italian Cheese Bread.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Requires a $10+ order. Sourced from Groupon.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for 50% Off Any Bread Item" data-offer-type="promo" data-discount="50% Off" data-title="50% Off Any Bread Item" data-badges="Coupon Code,Bread &amp; Sides" data-description="Half off any bread item, including Crazy Bread and Italian Cheese Bread." data-eligibility="Requires a $10+ order. Sourced from Groupon." data-code="GETBREADY">
+            <span class="coupon-code">GET••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 7 -->
+    <li class="coupon-list-item" data-filters="promo bread">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value">50%</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Bread &amp; Sides</span>
+          </div>
+          <h3 class="card-title">50% Off Italian Cheese Bread</h3>
+          <p class="card-desc">Half off Italian Cheese Bread when you add it to a pizza order.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Requires any pizza purchase. Sourced from Groupon.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for 50% Off Italian Cheese Bread" data-offer-type="promo" data-discount="50% Off" data-title="50% Off Italian Cheese Bread" data-badges="Coupon Code,Bread &amp; Sides" data-description="Half off Italian Cheese Bread when you add it to a pizza order." data-eligibility="Requires any pizza purchase. Sourced from Groupon." data-code="PERFECTPAIR">
+            <span class="coupon-code">PER••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 8 -->
+    <li class="coupon-list-item" data-filters="promo bread">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value is-compact">Free</span><span class="discount-suffix">Combo</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Combo Deal</span>
+          </div>
+          <h3 class="card-title">Free Crazy Combo</h3>
+          <p class="card-desc">Get a free Crazy Combo with any pizza purchase.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Requires a pizza purchase. Also listed as C2BJ1TRMB0 on some coupon sites.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for Free Crazy Combo" data-offer-type="promo" data-discount="Free Combo" data-title="Free Crazy Combo" data-badges="Coupon Code,Combo Deal" data-description="Get a free Crazy Combo with any pizza purchase." data-eligibility="Requires a pizza purchase. Also listed as C2BJ1TRMB0 on some coupon sites." data-code="FREECOMBO">
+            <span class="coupon-code">FRE••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 9 -->
+    <li class="coupon-list-item" data-filters="promo delivery">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-community">Coupon Code</span>
+          <span class="discount"><span class="discount-value">$4</span><span class="discount-suffix">Off</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Delivery Only</span>
+          </div>
+          <h3 class="card-title">$4 Off Delivery Orders $24+</h3>
+          <p class="card-desc">Save $4 on delivery orders of $24 or more.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Alternative delivery discount sourced from coupon sites.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="Get code for $4 Off Delivery Orders $24+" data-offer-type="promo" data-discount="$4 Off" data-title="$4 Off Delivery Orders $24+" data-badges="Coupon Code,Delivery Only" data-description="Save $4 on delivery orders of $24 or more." data-eligibility="Alternative delivery discount sourced from coupon sites." data-code="DELIVERY4YOU">
+            <span class="coupon-code">DEL••••</span>
+            <span class="cta-button">Get Code
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 10 -->
+    <li class="coupon-list-item" data-filters="ongoing">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Offer</span>
+          <span class="discount"><span class="discount-value is-compact">Hot-N-Ready</span><span class="discount-suffix">Value</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">In-Store Only</span>
+          </div>
+          <h3 class="card-title">Hot-N-Ready Pizzas</h3>
+          <p class="card-desc">Ready-to-go classic pizzas, typically around $6–$8, with no wait for pickup.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4M16 2v4M3 10h18"></path></svg>
+            <span>In-store only. Price varies by location.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="View offer: Hot-N-Ready Pizzas" data-offer-type="offer" data-discount="Hot-N-Ready" data-title="Hot-N-Ready Pizzas" data-badges="Official Offer,In-Store Only" data-description="Ready-to-go classic pizzas, typically around $6–$8, with no wait for pickup." data-eligibility="In-store only. Price varies by location." data-action="Check today's Hot-N-Ready price">
+            <span class="action-label">Check today's Hot-N-Ready price</span>
+            <span class="cta-button">View Offer
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 11 -->
+    <li class="coupon-list-item" data-filters="ongoing bread">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Offer</span>
+          <span class="discount"><span class="discount-value is-compact">Combo</span><span class="discount-suffix">Bundles</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Combo Deal</span>
+          </div>
+          <h3 class="card-title">Meal &amp; Combo Bundles</h3>
+          <p class="card-desc">Pizza paired with sides and drinks, including Slices-N-Stix and lunch combos, at set discounted prices.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4M16 2v4M3 10h18"></path></svg>
+            <span>Available in-store, on the app, and online. Pricing varies by location.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="View offer: Meal and Combo Bundles" data-offer-type="offer" data-discount="Combo Bundles" data-title="Meal &amp; Combo Bundles" data-badges="Official Offer,Combo Deal" data-description="Pizza paired with sides and drinks, including Slices-N-Stix and lunch combos, at set discounted prices." data-eligibility="Available in-store, on the app, and online. Pricing varies by location." data-action="Browse combo bundle options">
+            <span class="action-label">Browse combo bundle options</span>
+            <span class="cta-button">View Offer
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 12 -->
+    <li class="coupon-list-item" data-filters="ongoing">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Offer</span>
+          <span class="discount"><span class="discount-value is-compact">eClub</span><span class="discount-suffix">Savings</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Ongoing Savings</span>
+          </div>
+          <h3 class="card-title">eClub Email Savings</h3>
+          <p class="card-desc">Sign up for exclusive local deals, limited-time offers, and Crazy Bread promos sent straight to your inbox.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path></svg>
+            <span>Sign up at eclub.littlecaesars.com.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="View offer: eClub Email Savings" data-offer-type="offer" data-discount="eClub Savings" data-title="eClub Email Savings" data-badges="Official Offer,Ongoing Savings" data-description="Sign up for exclusive local deals, limited-time offers, and Crazy Bread promos sent straight to your inbox." data-eligibility="Sign up at eclub.littlecaesars.com." data-action="Join the eClub for savings">
+            <span class="action-label">Join the eClub for savings</span>
+            <span class="cta-button">View Offer
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 13 -->
+    <li class="coupon-list-item" data-filters="ongoing">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Offer</span>
+          <span class="discount"><span class="discount-value is-compact">Rewards</span><span class="discount-suffix">Program</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">App Only</span>
+          </div>
+          <h3 class="card-title">App Challenges &amp; Rewards</h3>
+          <p class="card-desc">Complete challenges in the Little Caesars app to earn credit toward future orders.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4M16 2v4M3 10h18"></path></svg>
+            <span>Requires the Little Caesars app. Includes push notifications for active deals.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="View offer: App Challenges and Rewards" data-offer-type="offer" data-discount="Rewards Program" data-title="App Challenges &amp; Rewards" data-badges="Official Offer,App Only" data-description="Complete challenges in the Little Caesars app to earn credit toward future orders." data-eligibility="Requires the Little Caesars app. Includes push notifications for active deals." data-action="View active app challenges">
+            <span class="action-label">View active app challenges</span>
+            <span class="cta-button">View Offer
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 14 -->
+    <li class="coupon-list-item" data-filters="ongoing">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Offer</span>
+          <span class="discount"><span class="discount-value is-compact">Rotating</span><span class="discount-suffix">Deals</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Limited Time</span>
+          </div>
+          <h3 class="card-title">Seasonal &amp; Rotating Deals</h3>
+          <p class="card-desc">Limited-time offers, such as two large one-topping pizzas for a set price, rotate throughout the year.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+            <span>Always check the official Today's Deals page for the current offer.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="View offer: Seasonal and Rotating Deals" data-offer-type="offer" data-discount="Rotating Deals" data-title="Seasonal &amp; Rotating Deals" data-badges="Official Offer,Limited Time" data-description="Limited-time offers, such as two large one-topping pizzas for a set price, rotate throughout the year." data-eligibility="Always check the official Today's Deals page for the current offer." data-action="See today's rotating deal">
+            <span class="action-label">See today's rotating deal</span>
+            <span class="cta-button">View Offer
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+    <!-- CARD 15 -->
+    <li class="coupon-list-item" data-filters="ongoing">
+      <article class="coupon-card">
+        <div class="savings-panel">
+          <span class="badge badge-official">Official Offer</span>
+          <span class="discount"><span class="discount-value is-compact">Veterans</span><span class="discount-suffix">Day</span></span>
+        </div>
+        <div class="card-content">
+          <div class="content-top">
+            <p class="brand-name">Little Caesars</p>
+            <span class="badge">Seasonal</span>
+          </div>
+          <h3 class="card-title">Veterans Day Free Meal</h3>
+          <p class="card-desc">U.S. military members and veterans typically receive a free meal, including pizza slices and a drink, around Veterans Day.</p>
+          <p class="eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path></svg>
+            <span>In-store only, around Veterans Day. Annual traditional offer.</span>
+          </p>
+          <button type="button" class="coupon-strip" aria-label="View offer: Veterans Day Free Meal" data-offer-type="offer" data-discount="Veterans Day" data-title="Veterans Day Free Meal" data-badges="Official Offer,Seasonal" data-description="U.S. military members and veterans typically receive a free meal, including pizza slices and a drink, around Veterans Day." data-eligibility="In-store only, around Veterans Day. Annual traditional offer." data-action="Check Veterans Day details">
+            <span class="action-label">Check Veterans Day details</span>
+            <span class="cta-button">View Offer
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+            </span>
+          </button>
+        </div>
+      </article>
+    </li>
+
+  </ul>
+</section>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" id="modalDialog">
+    <div class="modal-header">
+      <div class="modal-badges" id="modalBadges"></div>
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+
+    <p class="modal-discount" id="modalDiscount"></p>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <p class="modal-desc" id="modalDesc"></p>
+
+    <div id="modalCodeSection">
+      <div class="code-box">
+        <span class="code-text" id="modalCode"></span>
+      </div>
+      <button type="button" class="copy-button" id="copyCodeBtn">Copy Code</button>
+      <div class="modal-section">
+        <p class="modal-section-label">How to redeem</p>
+        <p>Copy the code above and enter it at checkout on littlecaesars.com or in the app to apply your savings.</p>
+      </div>
+    </div>
+
+    <div id="modalStepsSection" class="modal-section">
+      <p class="modal-section-label">How it works</p>
+      <ol>
+        <li>Select your items on littlecaesars.com or in the app.</li>
+        <li>Choose pickup, delivery, or in-store as applicable.</li>
+        <li>Review the offer applied before you confirm your order.</li>
+      </ol>
+    </div>
+
+    <div class="modal-section">
+      <p class="modal-section-label">Eligibility</p>
+      <p id="modalEligibility"></p>
+    </div>
+
+    <a href="https://littlecaesars.com/" target="_blank" rel="noopener noreferrer" class="visit-button">
+      Visit Little Caesars
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var lastFocusedElement = null;
+  var currentCode = "";
+
+  var modalBackdrop = document.getElementById("modalBackdrop");
+  var modalDialog = document.getElementById("modalDialog");
+  var modalCloseBtn = document.getElementById("modalCloseBtn");
+  var copyCodeBtn = document.getElementById("copyCodeBtn");
+
+  /* ---------------------------------------
+     FILTERS
+  --------------------------------------- */
+  function initializeFilters() {
+    var chips = document.querySelectorAll(".filter-chip");
+    var items = document.querySelectorAll(".coupon-list-item");
+
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        setActiveChip(chip, chips);
+        applyFilter(chip.getAttribute("data-filter"), items);
+      });
+    });
+  }
+
+  function setActiveChip(activeChip, chips) {
+    chips.forEach(function (chip) {
+      chip.setAttribute("aria-pressed", chip === activeChip ? "true" : "false");
+    });
+  }
+
+  function applyFilter(filterValue, items) {
+    items.forEach(function (item) {
+      var filters = item.getAttribute("data-filters") || "";
+      var matches = filterValue === "all" || filters.indexOf(filterValue) !== -1;
+      item.hidden = !matches;
+    });
+  }
+
+  /* ---------------------------------------
+     MODAL
+  --------------------------------------- */
+  function initializeCouponModal() {
+    var triggers = document.querySelectorAll(".coupon-strip");
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        openModal(trigger);
+      });
+    });
+
+    modalCloseBtn.addEventListener("click", closeModal);
+    copyCodeBtn.addEventListener("click", copyCouponCode);
+
+    modalBackdrop.addEventListener("click", function (event) {
+      if (event.target === modalBackdrop) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!modalBackdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") {
+        closeModal();
+      } else if (event.key === "Tab") {
+        trapFocus(event);
+      }
+    });
+  }
+
+  function openModal(trigger) {
+    lastFocusedElement = trigger;
+
+    var offerType = trigger.getAttribute("data-offer-type");
+    var discount = trigger.getAttribute("data-discount") || "";
+    var title = trigger.getAttribute("data-title") || "";
+    var badges = (trigger.getAttribute("data-badges") || "").split(",").filter(Boolean);
+    var description = trigger.getAttribute("data-description") || "";
+    var eligibility = trigger.getAttribute("data-eligibility") || "";
+
+    document.getElementById("modalDiscount").textContent = discount;
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalDesc").textContent = description;
+    document.getElementById("modalEligibility").textContent = eligibility;
+
+    var badgeContainer = document.getElementById("modalBadges");
+    badgeContainer.innerHTML = "";
+    badges.forEach(function (label) {
+      var span = document.createElement("span");
+      var cls = "badge";
+      if (label === "Official Offer") cls += " badge-official";
+      if (label === "Coupon Code" || label === "Community Verified") cls += " badge-community";
+      span.className = cls;
+      span.textContent = label;
+      badgeContainer.appendChild(span);
+    });
+
+    var codeSection = document.getElementById("modalCodeSection");
+    var stepsSection = document.getElementById("modalStepsSection");
+
+    if (offerType === "promo") {
+      currentCode = trigger.getAttribute("data-code") || "";
+      document.getElementById("modalCode").textContent = currentCode;
+      codeSection.style.display = "block";
+      stepsSection.style.display = "none";
+      resetCopyButton();
+    } else {
+      currentCode = "";
+      codeSection.style.display = "none";
+      stepsSection.style.display = "block";
+    }
+
+    modalBackdrop.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    modalCloseBtn.focus();
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove("is-open");
+    document.body.style.overflow = "";
+    restoreFocus();
+  }
+
+  function restoreFocus() {
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  function trapFocus(event) {
+    var focusableSelectors = 'a[href], button:not([disabled])';
+    var focusable = modalDialog.querySelectorAll(focusableSelectors);
+    if (focusable.length === 0) return;
+
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
+  /* ---------------------------------------
+     COPY CODE
+  --------------------------------------- */
+  function copyCouponCode() {
+    if (!currentCode) return;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(currentCode)
+        .then(showCopiedState)
+        .catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  }
+
+  function fallbackCopy() {
+    var textarea = document.createElement("textarea");
+    textarea.value = currentCode;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      showCopiedState();
+    } catch (err) {
+      /* Fail silently; never throw. */
+    }
+    document.body.removeChild(textarea);
+  }
+
+  function showCopiedState() {
+    copyCodeBtn.textContent = "✓ Code Copied Successfully";
+    copyCodeBtn.classList.add("is-copied");
+    setTimeout(resetCopyButton, 2000);
+  }
+
+  function resetCopyButton() {
+    copyCodeBtn.textContent = "Copy Code";
+    copyCodeBtn.classList.remove("is-copied");
+  }
+
+  /* ---------------------------------------
+     INIT
+  --------------------------------------- */
+  initializeFilters();
+  initializeCouponModal();
+})();
+</script>
