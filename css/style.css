@@ -83,10 +83,14 @@ a:hover, a:focus { color: var(--color-primary); }
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 6px;
+  column-gap: 16px;
   margin: 0;
   padding: 0;
 }
+.main-nav a { font-size: 0.9rem; }
 .main-nav a {
   text-decoration: none;
   color: var(--color-charcoal);
