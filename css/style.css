@@ -530,12 +530,6 @@ a:hover, a:focus { color: var(--color-primary); }
 }
 .status-pill--expired::before { background: var(--color-expired); }
 
-.deals-intro {
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  margin-bottom: 16px;
-}
-
 @media (max-width: 640px) {
   .data-table { font-size: 0.84rem; }
   .data-table th, .data-table td { padding: 11px 12px; }
