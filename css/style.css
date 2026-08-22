@@ -395,30 +395,59 @@ a:hover, a:focus { color: var(--color-primary); }
 }
 .plain-list li { margin-bottom: 6px; }
 
-/* Data tables */
+/* Data tables — premium card style */
 .table-wrap {
   overflow-x: auto;
-  margin: 0 0 20px;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 24px;
   border: 1px solid var(--color-card-border);
   border-radius: var(--radius-card);
+  box-shadow: 0 2px 4px rgba(38,42,51,0.04), 0 8px 24px rgba(38,42,51,0.06);
+  position: relative;
+  /* Pure-CSS scroll shadows: fade + shadow only appear where there's more to scroll */
+  background-image:
+    linear-gradient(to right, #FFFFFF 30%, rgba(255,255,255,0)),
+    linear-gradient(to right, rgba(255,255,255,0), #FFFFFF 70%) 100% 0,
+    radial-gradient(farthest-side at 0 50%, rgba(38,42,51,0.15), rgba(38,42,51,0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(38,42,51,0.15), rgba(38,42,51,0)) 100% 0;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+  background-size: 36px 100%, 36px 100%, 12px 100%, 12px 100%;
+  background-position: 0 0, 100% 0, 0 0, 100% 0;
+  background-attachment: local, local, scroll, scroll;
 }
 .data-table {
   width: 100%;
-  border-collapse: collapse;
+  min-width: 560px;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 0.88rem;
   background: #FFFFFF;
 }
 .data-table caption {
   text-align: left;
-  padding: 12px 16px;
-  font-weight: 700;
+  padding: 16px 18px;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
   color: var(--color-charcoal);
-  background: #FBF4EA;
-  border-bottom: 1px solid var(--color-card-border);
+  background: linear-gradient(135deg, #FBF0E1 0%, #FBF4EA 100%);
+  border-bottom: 2px solid var(--color-gold);
+  position: relative;
+}
+.data-table caption::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-right: 10px;
+  vertical-align: middle;
 }
 .data-table th, .data-table td {
   text-align: left;
-  padding: 10px 14px;
+  padding: 13px 16px;
   border-bottom: 1px solid var(--color-card-border);
   vertical-align: top;
 }
@@ -426,27 +455,98 @@ a:hover, a:focus { color: var(--color-primary); }
   background: #FBF4EA;
   color: var(--color-charcoal);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.data-table tbody tr:nth-child(even) { background: #FDFAF5; }
+.data-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+.data-table tbody tr:hover { background: #FBF1DE; }
+.data-table tr:last-child td { border-bottom: none; }
+
+/* First column (Code / Program) stays visible while scrolling horizontally on mobile */
+.data-table th:first-child,
+.data-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: inherit;
+  box-shadow: 1px 0 0 var(--color-card-border);
+}
+.data-table th:first-child { z-index: 3; background: #FBF4EA; }
+
+/* Promo code shown as a distinct chip */
+.data-table td:first-child strong {
+  display: inline-block;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  background: var(--color-coupon-strip, #FBF1DE);
+  border: 1px solid var(--color-gold);
+  border-radius: 6px;
+  padding: 3px 9px;
   letter-spacing: 0.02em;
 }
-.data-table tr:last-child td { border-bottom: none; }
-.data-table td.status-expired {
-  color: var(--color-expired);
+
+/* Status pills */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 700;
+  font-size: 0.82rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  line-height: 1.3;
 }
-.data-table td.status-active {
+.status-pill::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-pill--active {
   color: var(--color-success);
-  font-weight: 700;
+  background: var(--color-success-bg);
 }
-.data-table td.status-unverified {
+.status-pill--active::before { background: var(--color-success); }
+.status-pill--unverified {
+  color: #8A6A2E;
+  background: #FBF0DA;
+}
+.status-pill--unverified::before { background: var(--color-gold); }
+.status-pill--expired {
+  color: var(--color-expired);
+  background: #F6E4E0;
+}
+.status-pill--expired::before { background: var(--color-expired); }
+
+.deals-intro {
   color: var(--color-muted);
-  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  .data-table { font-size: 0.84rem; }
+  .data-table th, .data-table td { padding: 11px 12px; }
+  .data-table caption { padding: 14px 14px; font-size: 0.95rem; }
 }
 
 /* Expired codes table gets a visible expired tint */
 .expired-table td { color: #6B655B; }
-.expired-table .status-expired { white-space: nowrap; }
+.expired-table .status-pill--expired { white-space: nowrap; }
+
+
 
 /* FAQ accordion */
 .faq-list {
