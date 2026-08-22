@@ -439,6 +439,10 @@ a:hover, a:focus { color: var(--color-primary); }
   color: var(--color-success);
   font-weight: 700;
 }
+.data-table td.status-unverified {
+  color: var(--color-muted);
+  font-weight: 700;
+}
 
 /* Expired codes table gets a visible expired tint */
 .expired-table td { color: #6B655B; }
